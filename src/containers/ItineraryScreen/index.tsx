@@ -51,7 +51,7 @@ export function ItineraryScreen() {
 
   const onHandlerStateChange = (event: PanGestureHandlerStateChangeEvent) => {
     if (event.nativeEvent.oldState === State.ACTIVE) {
-      if (event.nativeEvent.translationX > 0) {
+      if (event.nativeEvent.translationX < 0) {
         setDay(day === 6 ? 0 : day + 1);
       } else {
         setDay(day === 0 ? 6 : day - 1);
