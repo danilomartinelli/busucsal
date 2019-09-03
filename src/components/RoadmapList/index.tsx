@@ -12,7 +12,10 @@ function RoadmapListRaw({data}: IProps) {
       data={data}
       renderItem={element => (
         <View style={styles.item}>
-          <Text>{`${element.index + 1}ª Parada: ${element.item}`}</Text>
+          <Text style={styles.text}>
+            <Text style={styles.bold}>{element.index + 1}ª Parada: </Text>
+            {element.item}
+          </Text>
         </View>
       )}
       ItemSeparatorComponent={() => <View style={styles.separator} />}
@@ -31,9 +34,17 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     paddingVertical: 20,
   },
+  text: {
+    fontFamily: 'Roboto',
+    color: '#8e44ad',
+    fontSize: 14,
+  },
+  bold: {
+    fontWeight: 'bold',
+  },
   separator: {
-    borderWidth: 0.5,
-    borderColor: '#000',
+    borderWidth: 0.3,
+    borderColor: '#ecf0f1',
     margin: 10,
   },
 });

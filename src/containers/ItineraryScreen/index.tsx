@@ -15,6 +15,10 @@ import {useNavigation} from '../../hooks/useNavigation';
 export function navigationOptions({navigation}: {navigation: Navigation}) {
   return {
     title: 'Itinerário',
+    headerTitleStyle: {
+      fontFamily: 'Roboto',
+      color: '#8e44ad',
+    },
   } as NavigationStackScreenOptions;
 }
 
@@ -114,6 +118,8 @@ const styles = StyleSheet.create({
     width: 20,
   },
   weekday: {
+    fontFamily: 'Roboto',
+    color: '#8e44ad',
     fontSize: 18,
   },
 });

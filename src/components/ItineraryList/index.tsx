@@ -15,9 +15,8 @@ function ItineraryListRaw({data, onPressItem}: IProps) {
       renderItem={element => (
         <View style={styles.item}>
           <TouchableOpacity onPress={() => onPressItem(element.item)}>
-            <Text>
-              {`${element.item.time} (${element.item.roadmap.toUpperCase()})`}
-            </Text>
+            <Text style={styles.text}>{element.item.time}</Text>
+            <Text style={styles.text2}>({element.item.roadmap})</Text>
           </TouchableOpacity>
         </View>
       )}
@@ -36,12 +35,22 @@ const styles = StyleSheet.create({
   item: {
     alignSelf: 'stretch',
     paddingVertical: 20,
-    alignItems: 'center',
+    marginLeft: 40,
     justifyContent: 'center',
   },
+  text: {
+    fontFamily: 'Roboto',
+    color: '#8e44ad',
+    fontSize: 14,
+  },
+  text2: {
+    fontFamily: 'Roboto',
+    color: '#8e44ad',
+    fontSize: 12,
+  },
   separator: {
-    borderWidth: 0.5,
-    borderColor: '#000',
+    borderWidth: 0.3,
+    borderColor: '#ecf0f1',
     margin: 10,
   },
 });

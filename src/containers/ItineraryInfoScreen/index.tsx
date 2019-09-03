@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, Image, TouchableOpacity} from 'react-native';
 import {Navigation} from '../../helpers/types';
 import {NavigationStackScreenOptions} from 'react-navigation';
 import {ItineraryInfo, roadmaps} from '../../helpers/constants';
@@ -16,6 +16,18 @@ export function navigationOptions({
 
   return {
     title: `${time} (${roadMap})`,
+    headerTitleStyle: {
+      fontFamily: 'Roboto',
+      color: '#8e44ad',
+    },
+    headerLeft: (
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <Image
+          style={{width: 20, height: 20, marginLeft: 20}}
+          source={require('../../assets/icons/arrow-left.png')}
+        />
+      </TouchableOpacity>
+    ),
   } as NavigationStackScreenOptions;
 }
 
