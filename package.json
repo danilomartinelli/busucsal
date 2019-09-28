@@ -5,7 +5,8 @@
   "scripts": {
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "ios" : "react-native run-ios --simulator=\"iPhone 11 Pro Max\""
   },
   "dependencies": {
     "date-fns": "^2.0.1",
